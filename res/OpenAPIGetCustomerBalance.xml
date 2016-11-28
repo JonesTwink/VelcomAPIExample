@@ -1,0 +1,11 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAPENC="http://schemas.xmlsoap.org/soap/encoding/"
+xmlns:xsi="http://www.w3.org/2001/XMLSchemainstance"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <SOAP-ENV:Body>
+ <m:OpenAPIGetCustomerBalanceRequest xmlns:m="http://eai.velcom.by/VPartnerGw">
+ <IssaLogin>{ISSA_LOGIN}</IssaLogin>
+ <IssaPassword>{ISSA_PASSWORD}</IssaPassword>
+ <ApplicationCode>Some Application Name</ApplicationCode>
+ </m:OpenAPIGetCustomerBalanceRequest>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

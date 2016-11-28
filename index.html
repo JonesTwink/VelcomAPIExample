@@ -1,0 +1,37 @@
+
+  <!doctype html>
+  <html lang="ru">
+    <head>
+      <meta charset="utf-8">
+      <title>Velcom API Example</title>
+      <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    </head>
+      <body>
+        <input id="login" type="text" placeholder="Имя пользователя ИССА"/>
+        <input id="pass" type="password" placeholder="Пароль ИССА"/>
+        <select id="operation">
+          <option value="OpenAPIGetCustomerBalance">OpenAPIGetCustomerBalance</option>
+          <option value="OpenAPIGetExtendedBalanceV1">OpenAPIGetExtendedBalanceV1</option>
+        </select>
+        <button onclick="runOperation()">Отправить запрос</button>
+
+        <div id="result">
+        </div>
+
+        <script>
+          function runOperation(){
+            var login = $('#login').val();
+            var pass = $('#pass').val();
+            var operation = $('#operation').val();
+            $.ajax({
+              type: "POST",
+              url: 'sendSOAPRequest.php',
+              data: {login: login, pass: pass, operation: operation},
+              success: function(data){
+                  $('#result').html(data);
+              }
+            });
+          }
+        </script>
+    </body>
+  </html>
